@@ -67,7 +67,7 @@ func UpdateRecord(accessKey string, newRecord map[string]string) error {
 		return err
 	}
 
-	resp, err := client.Post(url, "application/json", bytes.NewBuffer(payload))
+	resp, err := client.Post(url + "/" + accessKey, "application/json", bytes.NewBuffer(payload))
 	
 	if err != nil {
 		return err
