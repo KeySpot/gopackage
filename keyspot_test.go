@@ -34,3 +34,29 @@ func TestSetEnvironment(t *testing.T) {
 			t.Fatalf("The record doesn't match")
 	}
 }
+
+func TestUpdateRecord(t *testing.T) {
+	newRecord := map[string]string{
+		"VAR1": "val10",
+		"VAR2": "val20",
+		"VAR3": "val30",
+	}
+
+	err := UpdateRecord(accessKey, newRecord)
+
+	if err != nil {
+		t.Error(err)
+	}
+
+	originalRecord := map[string]string{
+		"VAR1": "val1",
+		"VAR2": "val2",
+		"VAR3": "val3",
+	}
+
+	err = UpdateRecord(accessKey, originalRecord)
+
+	if err != nil {
+		t.Error(err)
+	}
+}
