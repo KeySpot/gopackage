@@ -28,7 +28,8 @@ import (
 
 keyspot.SetEnvironment("<accessKey>")
 
-// access secrets with var secretValue string = os.Getenv("<secret-key>")
+// access secrets as environment variables
+var secretValue string = os.Getenv("<secret-key>")
 ```
 
 ### Get Secrets in Code Directly
